@@ -1,3 +1,7 @@
 from django.contrib import admin
+from catalog.models.item import Item
 
-# Register your models here.
+@admin.register(Item)
+class ItemAdmin(admin.ModelAdmin):
+    list_display = ('name', 'price', 'created_at')
+    search_fields = ('name',)
