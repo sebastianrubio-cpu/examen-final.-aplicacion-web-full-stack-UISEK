@@ -352,7 +352,7 @@ Asignatura: Desarrollo Web
 
 <div align="center">
 
-**Hecho con ❤️ para UISEK**
+**Hecho con ❤️ para Pablito**
 
 [⬆ Volver arriba](#examen-final---aplicación-web-full-stack-uisek)
 
