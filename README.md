@@ -1,4 +1,4 @@
-# 🎓 Examen Final - Aplicación Web Full-Stack UISEK
+# Examen Final - Aplicación Web Full-Stack UISEK
 
 <div align="center">
 
@@ -13,32 +13,35 @@
 
 ---
 
-## 📖 Descripción
+## 1. Introducción del Proyecto
+Este proyecto consiste en el diseño, desarrollo e implementación de una aplicación web full-stack desacoplada destinada a la gestión y visualización de un catálogo de películas, directores y vendedores. El sistema integra un Backend robusto basado en el framework Django (Django REST Framework) que actúa como proveedor de datos y servidor de autenticación bajo el estándar OAuth 2.0, y un Frontend ágil e interactivo desarrollado en React mediante Vite. La comunicación entre ambas capas se realiza de manera segura mediante peticiones asíncronas HTTP/HTTPS protegidas por tokens de acceso Bearer.
 
-Este proyecto corresponde al **examen final de Desarrollo Web** de la Universidad Internacional SEK (UISEK). 
+### Integrantes
+- Andres
 
-Consiste en una aplicación web Full-Stack que integra un backend robusto con una interfaz moderna y responsiva. La aplicación implementa una **arquitectura cliente-servidor** donde:
+### Carrera
+Ingeniería en Informática
 
-- 🔧 **Django** funciona exclusivamente como **API REST**
-- ⚛️ **React** consume los servicios expuestos para ofrecer una **interfaz moderna e interactiva**
-- 🔐 **OAuth 2.0** proporciona autenticación segura
-- 📊 **SQLite** almacena los datos de forma segura
+### Universidad
+Universidad Internacional SEK (UISEK)
 
 ---
 
-## 🎯 Objetivo
+## 2. Objetivos del Proyecto
 
-Desarrollar una aplicación web Full-Stack que demuestre el dominio de:
+### Objetivo Académico
+- Demostrar la capacidad práctica e intelectual para diseñar una arquitectura de software distribuida y desacoplada, aplicando patrones de diseño de software correctos.
+- Implementar mecanismos rigurosos de seguridad y control de acceso utilizando el protocolo de autorización OAuth 2.0 a nivel de API REST.
+- Consolidar habilidades en el manejo de bases de datos relacionales, persistencia de archivos multimedia y control de políticas de intercambio de recursos de origen cruzado (CORS).
 
-| 📚 Concepto | ✅ Implementado |
-|---|---|
-| Desarrollo de APIs REST | ✓ GET, POST, PUT, PATCH, DELETE |
-| React & Componentes | ✓ Interfaz reactiva y modular |
-| OAuth 2.0 | ✓ Autenticación segura |
-| Consumo de APIs | ✓ Integración cliente-servidor |
-| Arquitectura Cliente-Servidor | ✓ Separación de responsabilidades |
-| Control de versiones | ✓ Git & GitHub |
+### Expansión hacia un Modelo de Producción Profesional (Teoría de Escalabilidad)
+Para transformar este prototipo académico en una plataforma lista para el mercado con alta disponibilidad, se contemplan los siguientes ejes de expansión:
+1. **Desacoplamiento de Base de Datos y Almacenamiento:** Migrar el motor local SQLite a una base de datos relacional administrada de nivel empresarial (como PostgreSQL o Amazon RDS). Los archivos multimedia (pósteres y fotos) se trasladarían desde el disco local hacia un servicio de almacenamiento de objetos en la nube, como Amazon S3, distribuyéndolos mediante una red de entrega de contenido (CDN) como Cloudflare.
+2. **Contenerización y Orquestación:** Empaquetar de manera independiente las aplicaciones de Frontend y Backend utilizando contenedores Docker. Esto garantizaría que el sistema se ejecute bajo las mismas variables y dependencias exactas en cualquier infraestructura, permitiendo su orquestación automatizada en clústeres mediante Kubernetes.
+3. **Escalabilidad Horizontal e Infraestructura Serverless:** Desplegar el Backend detrás de un balanceador de carga (Nginx o AWS ALB) con auto-scaling para levantar instancias dinámicamente según la demanda. El Frontend de React se compilaría a archivos estáticos puros para ser servidos directamente desde infraestructuras Edge (como AWS Amplify, Vercel o Netlify), reduciendo la latencia de carga global a milisegundos.
+4. **Seguridad y CI/CD:** Implementar HTTPS mandatorio mediante certificados SSL/TLS administrados, resguardar las credenciales sensibles y llaves maestras en administradores de secretos (como AWS Secrets Manager) e integrar flujos de Integración y Despliegue Continuos (CI/CD) automatizados mediante GitHub Actions.
 
+---
 ---
 
 ## 🛠️ Tecnologías utilizadas
