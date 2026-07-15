@@ -1,6 +1,4 @@
-Aquí tienes la estructura completa y el contenido de un archivo `README.md` profesional, redactado con un tono de ingeniería y adecuado para una entrega de examen final en la UISEK.
 
-Este documento está optimizado técnica y organizativamente para reflejar un estándar de desarrollo real, detallando la arquitectura desacoplada (Frontend-Backend), los requerimientos de infraestructura y las directrices de despliegue.
 
 ---
 
