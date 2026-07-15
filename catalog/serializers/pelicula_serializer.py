@@ -1,7 +1,7 @@
 from rest_framework import serializers
 from catalog.models.pelicula import Pelicula
 from catalog.models.director import Director
-from catalog.models.vendedor import Vendedor
+from catalog.models.vendor import Vendedor  # Corregido a 'vendor'
 from .director_serializer import DirectorSerializer
 from .vendedor_serializer import VendedorSerializer
 
