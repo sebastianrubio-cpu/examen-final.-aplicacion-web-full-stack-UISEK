@@ -1,16 +1,10 @@
-
-
----
-
-```markdown
 # Sistema de Gestión de Catálogo Web Full-Stack - Examen Final UISEK
 
 ## 1. Introducción del Proyecto
 Este proyecto consiste en el diseño, desarrollo e implementación de una aplicación web full-stack desacoplada destinada a la gestión y visualización de un catálogo de películas, directores y vendedores. El sistema integra un Backend robusto basado en el framework Django (Django REST Framework) que actúa como proveedor de datos y servidor de autenticación bajo el estándar OAuth 2.0, y un Frontend ágil e interactivo desarrollado en React mediante Vite. La comunicación entre ambas capas se realiza de manera segura mediante peticiones asíncronas HTTP/HTTPS protegidas por tokens de acceso Bearer.
 
 ### Integrantes
-* [Tu Nombre Completo]
-* [Nombre de Compañero/a si aplica]
+* Andres [Nombre Completo]
 
 ### Carrera
 Ingeniería en Informática
@@ -40,16 +34,6 @@ Para transformar este prototipo académico en una plataforma lista para el merca
 
 El sistema implementa una **arquitectura desacoplada en capas**, aislando por completo la lógica de negocio y persistencia de datos (Backend) de la capa de presentación e interacción del usuario (Frontend). 
 
-
-```
-
-[ Frontend: React / Vite ]  <--- (HTTP + OAuth2 Token) --->  [ Backend: Django REST Framework ]
-(Puerto 5173)                                                    (Puerto 8000)
-|
-[ BD: SQLite (Local) ]
-
-```
-
 ### Separación de Responsabilidades
 * **Backend (Django):** Se encarga exclusivamente de procesar reglas de negocio, exponer los endpoints serializados en formato JSON, validar tokens criptográficos de autorización y gestionar el almacenamiento en la base de datos y archivos locales.
 * **Frontend (React):** Se encarga de la interfaz gráfica del usuario, el manejo de rutas del lado del cliente, el almacenamiento temporal de las credenciales de sesión y el consumo asíncrono de los servicios expuestos por el Backend.
@@ -60,37 +44,7 @@ El sistema implementa una **arquitectura desacoplada en capas**, aislando por co
 
 A continuación se detalla la jerarquía física del proyecto y la función técnica de cada módulo:
 
-
-```
-
-├── backend/                  # Directorio raíz del Backend (Django)
-│   ├── backend/              # Configuración global del proyecto de Django
-│   │   ├── settings.py       # Variables de entorno, APPS, Middlewares y seguridad
-│   │   ├── urls.py           # Enrutador principal del sistema (Admin, OAuth2)
-│   │   └── wsgi.py / asgi.py # Interfaces de pasarela para servidores web
-│   ├── catalog/              # Aplicación local encargada del catálogo de películas
-│   │   ├── migrations/       # Historial de cambios y mutaciones de la base de datos
-│   │   ├── models/           # Definición de las entidades (Pelicula, Director, Vendedor)
-│   │   ├── serializers/      # Lógica de transformación de Modelos a JSON (y viceversa)
-│   │   ├── views/            # Lógica de control y ViewSets que procesan las peticiones
-│   │   ├── admin.py          # Registro de modelos en el panel de administración nativo
-│   │   └── urls.py           # Enrutamiento específico del API de catálogo
-│   ├── media/                # Almacenamiento local de archivos multimedia (Pósteres/Fotos)
-│   ├── manage.py             # Utilidad de línea de comandos para la gestión del Backend
-│   └── requirements.txt      # Manifiesto de dependencias y librerías de Python
-│
-├── frontend/                 # Directorio raíz del Frontend (React + Vite)
-│   ├── public/               # Recursos estáticos globales abiertos (Favicon, SVGs)
-│   ├── src/                  # Código fuente ejecutable de la interfaz
-│   │   ├── assets/           # Imágenes y hojas de estilo base
-│   │   ├── App.jsx           # Componente raíz y lógica principal de la aplicación
-│   │   └── main.jsx          # Punto de entrada de renderizado de React en el DOM
-│   ├── index.html            # Lienzo HTML5 principal de la aplicación
-│   ├── package.json          # Manifiesto de dependencias de Node.js y scripts de ejecución
-│   └── vite.config.js        # Configuración del compilador y servidor de desarrollo Vite
-
-```
-
+├── backend/                  # Directorio raíz del Backend (Django)│   ├── backend/              # Configuración global del proyecto de Django│   │   ├── settings.py       # Variables de entorno, APPS, Middlewares y seguridad│   │   ├── urls.py           # Enrutador principal del sistema (Admin, OAuth2)│   │   └── wsgi.py / asgi.py # Interfaces de pasarela para servidores web│   ├── catalog/              # Aplicación local encargada del catálogo de películas│   │   ├── migrations/       # Historial de cambios y mutaciones de la base de datos│   │   ├── models/           # Definición de las entidades (Pelicula, Director, Vendedor)│   │   ├── serializers/      # Lógica de transformación de Modelos a JSON (y viceversa)│   │   ├── views/            # Lógica de control y ViewSets que procesan las peticiones│   │   ├── admin.py          # Registro de modelos en el panel de administración nativo│   │   └── urls.py           # Enrutamiento específico del API de catálogo│   ├── media/                # Almacenamiento local de archivos multimedia (Pósteres/Fotos)│   ├── manage.py             # Utilidad de línea de comandos para la gestión del Backend│   └── requirements.txt      # Manifiesto de dependencias y librerías de Python│├── frontend/                 # Directorio raíz del Frontend (React + Vite)│   ├── public/               # Recursos estáticos globales abiertos (Favicon, SVGs)│   ├── src/                  # Código fuente ejecutable de la interfaz│   │   ├── assets/           # Imágenes y hojas de estilo base│   │   ├── App.jsx           # Componente raíz y lógica principal de la aplicación│   │   └── main.jsx          # Punto de entrada de renderizado de React en el DOM│   ├── index.html            # Lienzo HTML5 principal de la aplicación│   ├── package.json          # Manifiesto de dependencias de Node.js y scripts de ejecución│   └── vite.config.js        # Configuración del compilador y servidor de desarrollo Vite
 ---
 
 ## 5. Instrucciones de Ejecución
@@ -105,127 +59,22 @@ Antes de iniciar, asegúrese de contar con los siguientes entornos instalados gl
 1. Navegue al directorio raíz del backend:
    ```bash
    cd backend
-
-```
-
-2. Genere un entorno virtual aislado para evitar colisiones de dependencias:
-```bash
-# En Windows
+Genere un entorno virtual aislado para evitar colisiones de dependencias:Bash# En Windows
 py -3.12 -m venv .venv
 # En macOS/Linux
 python3.12 -m venv .venv
-
-```
-
-
-3. Active el entorno virtual:
-```bash
-# En Windows (PowerShell)
+Active el entorno virtual:Bash# En Windows (PowerShell)
 .venv\Scripts\activate
 # En Windows (CMD Tradicional)
 .venv\Scripts\activate.bat
 # En macOS/Linux
 source .venv/bin/activate
-
-```
-
-
-4. Instale los módulos obligatorios definidos en el manifiesto de manera limpia:
-```bash
-pip install --no-cache-dir -r requirements.txt
-
-```
-
-
-5. Realice las migraciones de esquemas para estructurar la base de datos relacional:
-```bash
-python manage.py makemigrations
+Instale los módulos obligatorios definidos en el manifiesto de manera limpia:Bashpip install --no-cache-dir -r requirements.txt
+Realice las migraciones de esquemas para estructurar la base de datos relacional:Bashpython manage.py makemigrations
 python manage.py migrate
-
-```
-
-
-6. Genere la credencial del administrador supremo del sistema (Superusuario):
-```bash
-python manage.py createsuperuser
-
-```
-
-
-7. Inicialice el servidor web de desarrollo:
-```bash
-python manage.py runserver
-
-```
-
-
-*El servidor quedará a la escucha en la dirección:* `http://127.0.0.1:8000/`
-
-### Configuración e Inicio del Frontend (React + Vite)
-
-1. En una nueva pestaña de la terminal, navegue al directorio raíz del frontend:
-```bash
-cd frontend
-
-```
-
-
-2. Instale los paquetes y dependencias del ecosistema Node.js:
-```bash
-npm install
-
-```
-
-
-3. Ejecute el servidor de desarrollo local del cliente:
-```bash
-npm run dev
-
-```
-
-
-*La interfaz de usuario quedará disponible en la dirección:* `http://localhost:5173/`
-
-### Rutas Excluidas del Control de Versiones (`.gitignore`)
-
-Se han excluido de forma explícita del repositorio de Git los archivos y directorios que comprometen la portabilidad o la seguridad del sistema:
-
-* Carpetas de entornos virtuales (`.venv/`, `env/`)
-* Residuos de precompilación de Python (`__pycache__/`, `*.pyc`)
-* Base de datos local volátil (`db.sqlite3`)
-* Directorio local de subida de imágenes de usuarios (`media/`)
-* Carpeta de módulos de Node.js en el frontend (`node_modules/`)
-* Archivos temporales de compilación de producción (`dist/`)
-
----
-
-## 6. Rúbrica de Evaluación Utilizada
-
-| Criterio de Evaluación | Descripción | Puntaje Máximo | Calificación Obtenida |
-| --- | --- | --- | --- |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-|  |  |  |  |
-| **Total** |  | **/** |  |
-
----
-
-## 7. Recomendaciones Observadas de parte del Estudiante
-
-* **Aislamiento Estricto de Entornos:** Al desplegar este proyecto en los equipos de los laboratorios de la universidad, se recomienda enfáticamente eliminar cualquier carpeta `.venv` preexistente o directorios `__pycache__` heredados, ya que las variaciones de versión de los intérpretes locales de Python bloquean la correcta inicialización del sistema.
-* **Control de Restricciones del Sistema Operativo:** En entornos Windows corporativos o universitarios, PowerShell suele bloquear la ejecución de los scripts de activación. Se sugiere realizar las gestiones desde la consola clásica de Símbolo del Sistema (`cmd.exe`) o modificar la política de ejecución de manera temporal en la sesión abierta mediante comandos bypass.
-* **Verificación de Librerías Nativas:** Asegurarse de compilar e instalar dependencias con extensiones binarias de C (como `Pillow` y `cryptography`) utilizando el flag `--no-cache-dir`, evitando así que el gestor de paquetes arrastre binarios corruptos alojados en el almacenamiento compartido de la estación de trabajo.
-
----
-
-## 8. Conclusiones
-
-* **Éxito del Enfoque Desacoplado:** La arquitectura basada en servicios e interfaces independientes demostró ser una solución óptima para el desarrollo moderno, permitiendo que modificaciones de diseño en la interfaz gráfica no alteren de ningún modo la integridad o reglas lógicas configuradas en el servidor.
-* **Solidez en Seguridad Criptográfica:** La incorporación de `django-oauth-toolkit` acoplada con las políticas restrictivas de Django REST Framework provee un control de accesos de estándar profesional, limitando eficazmente el consumo de recursos sensibles a clientes que demuestren de forma transparente su autenticidad.
-* **Preparación Teórica de Despliegue:** Aunque el sistema opera adecuadamente bajo entornos simulados locales (`localhost`) y almacenamiento SQLite, el diseño modular del backend y la portabilidad del frontend facilitan una transición directa hacia la nube bajo arquitecturas escalables horizontales y entornos automatizados de producción.
-
-```
-
-
-```
+Genere la credencial del administrador supremo del sistema (Superusuario):Bashpython manage.py createsuperuser
+Inicialice el servidor web de desarrollo:Bashpython manage.py runserver
+El servidor quedará a la escucha en la dirección: http://127.0.0.1:8000/Configuración e Inicio del Frontend (React + Vite)En una nueva pestaña de la terminal, navegue al directorio raíz del frontend:Bashcd frontend
+Instale los paquetes y dependencias del ecosistema Node.js:Bashnpm install
+Ejecute el servidor de desarrollo local del cliente:Bashnpm run dev
+La interfaz de usuario quedará disponible en la dirección: http://localhost:5173/Rutas Excluidas del Control de Versiones (.gitignore)Se han excluido de forma explícita del repositorio de Git los archivos y directorios que comprometen la portabilidad o la seguridad del sistema:Carpetas de entornos virtuales (.venv/, env/)Residuos de precompilación de Python (__pycache__/, *.pyc)Base de datos local volátil (db.sqlite3)Directorio local de subida de imágenes de usuarios (media/)Carpeta de módulos de Node.js en el frontend (node_modules/)Archivos temporales de compilación de producción (dist/)6. Rúbrica de Evaluación UtilizadaCriterio de EvaluaciónDescripciónPuntaje MáximoCalificación ObtenidaTotal/7. Recomendaciones Observadas de parte del EstudianteAislamiento Estricto de Entornos: Al desplgar este proyecto en los equipos de los laboratorios de la universidad, se recomienda enfáticamente eliminar cualquier carpeta .venv preexistente o directorios __pycache__ heredados, ya que las variaciones de versión de los intérpretes locales de Python bloquean la correcta inicialización del sistema.Control de Restricciones del Sistema Operativo: En entornos Windows corporativos o universitarios, PowerShell suele bloquear la ejecución de los scripts de activación. Se sugiere realizar las gestiones desde la consola clásica de Símbolo del Sistema (cmd.exe) o modificar la política de ejecución de manera temporal en la sesión abierta mediante comandos bypass.Verificación de Librerías Nativas: Asegurarse de compilar e instalar dependencias con extensiones binarias de C (como Pillow y cryptography) utilizando el flag --no-cache-dir, evitando así que el gestor de paquetes arrastre binarios corruptos alojados en el almacenamiento compartido de la estación de trabajo.8. ConclusionesÉxito del Enfoque Desacoplado: La arquitectura basada en servicios e interfaces independientes demostró ser una solución óptima para el desarrollo moderno, permitiendo que modificaciones de diseño en la interfaz gráfica no alteren de ningún modo la integridad o reglas lógicas configuradas en el servidor.Solidez en Seguridad Criptográfica: La incorporación de django-oauth-toolkit acoplada con las políticas restrictivas de Django REST Framework provee un control de accesos de estándar profesional, limitando eficazmente el consumo de recursos sensibles a clientes que demuestren de forma transparente su autenticidad.Preparación Teórica de Despliegue: Aunque el sistema opera adecuadamente bajo entornos simulados locales (localhost) y almacenamiento SQLite, el diseño modular del backend y la portabilidad del frontend facilitan una transición directa hacia la nube bajo arquitecturas escalables horizontales y entornos automatizados de producción.
