@@ -16,8 +16,9 @@
 ## 1. Introducción del Proyecto
 Este proyecto consiste en el diseño, desarrollo e implementación de una aplicación web full-stack desacoplada destinada a la gestión y visualización de un catálogo de películas, directores y vendedores. El sistema integra un Backend robusto basado en el framework Django (Django REST Framework) que actúa como proveedor de datos y servidor de autenticación bajo el estándar OAuth 2.0, y un Frontend ágil e interactivo desarrollado en React mediante Vite. La comunicación entre ambas capas se realiza de manera segura mediante peticiones asíncronas HTTP/HTTPS protegidas por tokens de acceso Bearer.
 
+```
 ### Integrantes
-- Andres
+- Sebastian Andres Rubio Rivera
 
 ### Carrera
 Ingeniería en Informática
@@ -25,6 +26,7 @@ Ingeniería en Informática
 ### Universidad
 Universidad Internacional SEK (UISEK)
 
+```
 ---
 
 ## 2. Objetivos del Proyecto
@@ -36,11 +38,16 @@ Universidad Internacional SEK (UISEK)
 
 ### Expansión hacia un Modelo de Producción Profesional (Teoría de Escalabilidad)
 Para transformar este prototipo académico en una plataforma lista para el mercado con alta disponibilidad, se contemplan los siguientes ejes de expansión:
-1. **Desacoplamiento de Base de Datos y Almacenamiento:** Migrar el motor local SQLite a una base de datos relacional administrada de nivel empresarial (como PostgreSQL o Amazon RDS). Los archivos multimedia (pósteres y fotos) se trasladarían desde el disco local hacia un servicio de almacenamiento de objetos en la nube, como Amazon S3, distribuyéndolos mediante una red de entrega de contenido (CDN) como Cloudflare.
-2. **Contenerización y Orquestación:** Empaquetar de manera independiente las aplicaciones de Frontend y Backend utilizando contenedores Docker. Esto garantizaría que el sistema se ejecute bajo las mismas variables y dependencias exactas en cualquier infraestructura, permitiendo su orquestación automatizada en clústeres mediante Kubernetes.
-3. **Escalabilidad Horizontal e Infraestructura Serverless:** Desplegar el Backend detrás de un balanceador de carga (Nginx o AWS ALB) con auto-scaling para levantar instancias dinámicamente según la demanda. El Frontend de React se compilaría a archivos estáticos puros para ser servidos directamente desde infraestructuras Edge (como AWS Amplify, Vercel o Netlify), reduciendo la latencia de carga global a milisegundos.
-4. **Seguridad y CI/CD:** Implementar HTTPS mandatorio mediante certificados SSL/TLS administrados, resguardar las credenciales sensibles y llaves maestras en administradores de secretos (como AWS Secrets Manager) e integrar flujos de Integración y Despliegue Continuos (CI/CD) automatizados mediante GitHub Actions.
 
+```
+1. **Desacoplamiento de Base de Datos y Almacenamiento:** Migrar el motor local SQLite a una base de datos relacional administrada de nivel empresarial (como PostgreSQL o Amazon RDS). Los archivos multimedia (pósteres y fotos) se trasladarían desde el disco local hacia un servicio de almacenamiento de objetos en la nube, como Amazon S3, distribuyéndolos mediante una red de entrega de contenido (CDN) como Cloudflare.
+
+2. **Contenerización y Orquestación:** Empaquetar de manera independiente las aplicaciones de Frontend y Backend utilizando contenedores Docker. Esto garantizaría que el sistema se ejecute bajo las mismas variables y dependencias exactas en cualquier infraestructura, permitiendo su orquestación automatizada en clústeres mediante Kubernetes.
+
+3. **Escalabilidad Horizontal e Infraestructura Serverless:** Desplegar el Backend detrás de un balanceador de carga (Nginx o AWS ALB) con auto-scaling para levantar instancias dinámicamente según la demanda. El Frontend de React se compilaría a archivos estáticos puros para ser servidos directamente desde infraestructuras Edge (como AWS Amplify, Vercel o Netlify), reduciendo la latencia de carga global a milisegundos.
+
+4. **Seguridad y CI/CD:** Implementar HTTPS mandatorio mediante certificados SSL/TLS administrados, resguardar las credenciales sensibles y llaves maestras en administradores de secretos (como AWS Secrets Manager) e integrar flujos de Integración y Despliegue Continuos (CI/CD) automatizados mediante GitHub Actions.
+```
 ---
 
 
