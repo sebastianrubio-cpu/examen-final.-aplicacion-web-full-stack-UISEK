@@ -42,7 +42,7 @@ Para transformar este prototipo académico en una plataforma lista para el merca
 4. **Seguridad y CI/CD:** Implementar HTTPS mandatorio mediante certificados SSL/TLS administrados, resguardar las credenciales sensibles y llaves maestras en administradores de secretos (como AWS Secrets Manager) e integrar flujos de Integración y Despliegue Continuos (CI/CD) automatizados mediante GitHub Actions.
 
 ---
----
+
 
 ## 🛠️ Tecnologías utilizadas
 
@@ -116,30 +116,34 @@ DELETE /api/items/{id}/     → Eliminar registro
 ```
 examen-final-UISEK/
 │
-├── 📁 backend/                    # Django REST API
-│   ├── 📁 apps/
-│   │   └── 📁 catalog/
-│   │       ├── models.py          # Definición de modelos
-│   │       ├── serializers.py     # Serializadores
-│   │       ├── views.py           # Vistas API
-│   │       └── urls.py            # Rutas
-│   ├── 📁 api/
-│   │   └── settings.py            # Configuración Django
-│   ├── manage.py
-│   └── requirements.txt
+├── 📂backend/                  # Directorio raíz del Backend (Django)
+│   ├── 📂backend/              # Configuración global del proyecto de Django
+│   │   ├── settings.py       # Variables de entorno, APPS, Middlewares y seguridad
+│   │   ├── urls.py           # Enrutador principal del sistema (Admin, OAuth2)
+│   │   └── wsgi.py / asgi.py # Interfaces de pasarela para servidores web
+│   ├── 📂catalog/              # Aplicación local encargada del catálogo de películas
+│   │   ├── migrations/       # Historial de cambios y mutaciones de la base de datos
+│   │   ├── models/           # Definición de las entidades (Pelicula, Director, Vendedor)
+│   │   ├── serializers/      # Lógica de transformación de Modelos a JSON (y viceversa)
+│   │   ├── views/            # Lógica de control y ViewSets que procesan las peticiones
+│   │   ├── admin.py          # Registro de modelos en el panel de administración nativo
+│   │   └── urls.py           # Enrutamiento específico del API de catálogo
+│   ├── 📂media/                # Almacenamiento local de archivos multimedia (Pósteres/Fotos)
+│   ├── 📂manage.py             # Utilidad de línea de comandos para la gestión del Backend
+│   └── 📂requirements.txt      # Manifiesto de dependencias y librerías de Python
 │
-├── 📁 frontend/                   # React App
-│   ├── 📁 src/
-│   │   ├── 📁 components/         # Componentes React
-│   │   ├── 📁 pages/              # Páginas
-│   │   ├── 📁 services/           # Servicios API
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   ├── 📁 public/
-│   ├── package.json
-│   └── vite.config.js
+├── 📂frontend/                 # Directorio raíz del Frontend (React + Vite)
+│   ├── 📂public/               # Recursos estáticos globales abiertos (Favicon, SVGs)
+│   ├── 📂src/                  # Código fuente ejecutable de la interfaz
+│   │   ├── assets/           # Imágenes y hojas de estilo base
+│   │   ├── App.jsx           # Componente raíz y lógica principal de la aplicación
+│   │   └── main.jsx          # Punto de entrada de renderizado de React en el DOM
+│   ├── 📂index.html            # Lienzo HTML5 principal de la aplicación
+│   ├── 📂package.json          # Manifiesto de dependencias de Node.js y scripts de ejecución
+│   └── 📂vite.config.js        # Configuración del compilador y servidor de desarrollo Vite
 │
-└── README.md                       # Este archivo
+└──readme.me                   #Archivo actual
+
 ```
 
 ---
@@ -163,10 +167,7 @@ cd backend
 python -m venv venv
 
 # Activar entorno virtual
-# En Windows:
 venv\Scripts\activate
-# En Linux/Mac:
-source venv/bin/activate
 
 # Instalar dependencias
 pip install -r requirements.txt
