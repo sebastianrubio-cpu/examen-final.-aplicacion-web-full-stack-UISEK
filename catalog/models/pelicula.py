@@ -1,6 +1,7 @@
 from django.db import models
-from .director import Director
-from .vendedor import Vendedor
+from catalog.models.director import Director
+from catalog.models.vendedor import Vendedor  # <-- Con 'vendedor'
+# ... resto del archivo igual
 
 class Pelicula(models.Model):
     nombre = models.CharField(max_length=200)

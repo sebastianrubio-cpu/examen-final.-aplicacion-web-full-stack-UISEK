@@ -1,5 +1,6 @@
 from rest_framework import serializers
-from catalog.models.vendedor import Vendedor
+from catalog.models.vendedor import Vendedor  # <-- Con 'vendedor'
+# ... resto del archivo igual
 
 class VendedorSerializer(serializers.ModelSerializer):
     # Mostramos la representación legible del 'choice' en modo de solo lectura

@@ -8,7 +8,7 @@ MEDIA_URL = '/media/'
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/6.0/howto/deployment/checklist/
-
+DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-+rra4btfi@)_zs09cby^#y*kb^zyh^c@-jj&5d-2#6bh95f$b_'
 

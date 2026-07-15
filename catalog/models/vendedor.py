@@ -1,3 +1,4 @@
+# catalog/models/vendedor.py
 from django.db import models
 
 class Vendedor(models.Model):
