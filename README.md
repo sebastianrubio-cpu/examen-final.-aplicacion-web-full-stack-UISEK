@@ -16,17 +16,14 @@
 ## 1. Introducción del Proyecto
 Este proyecto consiste en el diseño, desarrollo e implementación de una aplicación web full-stack desacoplada destinada a la gestión y visualización de un catálogo de películas, directores y vendedores. El sistema integra un Backend robusto basado en el framework Django (Django REST Framework) que actúa como proveedor de datos y servidor de autenticación bajo el estándar OAuth 2.0, y un Frontend ágil e interactivo desarrollado en React mediante Vite. La comunicación entre ambas capas se realiza de manera segura mediante peticiones asíncronas HTTP/HTTPS protegidas por tokens de acceso Bearer.
 
-┌──────────────────────────────────────┐
-│         ### Integrantes              │
-│ - Sebastian Andres Rubio Rivera      │
-│                                      │
-│        ### Carrera                   │
-│ Ingeniería en Informática            │
-│                                      │
-│        ### Universidad               │
-│ Universidad Internacional SEK (UISEK)│
-│                                      │
-└──────────────────────────────────────┘
+### Integrantes
+- Sebastian Andres Rubio Rivera
+
+### Carrera
+Ingeniería en Informática
+
+### Universidad
+Universidad Internacional SEK (UISEK)
 ---
 
 ## 2. Objetivos del Proyecto
