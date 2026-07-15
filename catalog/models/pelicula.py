@@ -7,7 +7,7 @@ class Pelicula(models.Model):
     duracion = models.PositiveIntegerField(help_text="Duración en minutos")
     fecha_lanzamiento = models.DateField()
     director = models.ForeignKey(Director, on_delete=models.PROTECT, related_name='peliculas')
-    vendedores = models.ManyToManyField(Vendedor, related_name='peliculas')
+    vendedores = models.ManyToManyField(Vendedor, related_name='peliculas', blank=True)
     poster = models.ImageField(upload_to='posters/', null=True, blank=True)
 
     def __str__(self):
