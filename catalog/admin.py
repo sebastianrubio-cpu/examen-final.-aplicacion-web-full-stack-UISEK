@@ -1,8 +1,8 @@
 from django.contrib import admin
 from catalog.models.director import Director
-from catalog.models.vendedor import Vendedor  # <-- Con 'vendedor'
+from catalog.models.vendedor import Vendedor  
 from catalog.models.pelicula import Pelicula
-# ... resto del archivo igual
+
 
 @admin.register(Director)
 class DirectorAdmin(admin.ModelAdmin):

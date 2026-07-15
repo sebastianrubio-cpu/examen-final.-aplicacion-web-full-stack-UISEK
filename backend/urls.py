@@ -1,16 +1,9 @@
+from django.contrib import admin
 from django.urls import path, include
-from rest_framework.routers import DefaultRouter
-from catalog.views.director_view import DirectorViewSet
-from catalog.views.vendedor_view import VendedorViewSet
-from catalog.views.pelicula_view import PeliculaViewSet
-
-# Se registra un Router para manejar automáticamente las rutas del CRUD
-router = DefaultRouter()
-router.register(r'directores', DirectorViewSet, basename='director')
-router.register(r'vendedores', VendedorViewSet, basename='vendedor')
-router.register(r'peliculas', PeliculaViewSet, basename='pelicula')
 
 urlpatterns = [
-
-    path('', include(router.urls)),
+    path('admin/', admin.site.urls),
+    # OAuth 2.0 endpoints para login y tokens
+    path('api/v1/o/', include('oauth2_provider.urls', namespace='oauth2_provider')),
+    path('api/v1/catalog/', include('catalog.urls')),
 ]
