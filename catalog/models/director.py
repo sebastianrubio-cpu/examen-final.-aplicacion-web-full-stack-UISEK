@@ -5,6 +5,7 @@ class Director(models.Model):
     fecha_nacimiento = models.DateField(null=True, blank=True)
     premios_ganados = models.PositiveIntegerField(default=0)
     foto = models.ImageField(upload_to='directores/', null=True, blank=True)
+    biografia = models.TextField(null=True, blank=True)
 
     def __str__(self):
         return self.nombre
